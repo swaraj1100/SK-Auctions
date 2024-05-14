@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <style>
+
+         body {
+            background-image: url('https://images.unsplash.com/photo-1488342994276-7c3bc0742042?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .text {
+            font-size: 25px;
+            color:white;
+            letter-spacing: 10px;
+            font-family: monospace;
+            border-right: 5px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s , cursor .4s step-end infinite alternate;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            padding: 13px 16px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 92px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #5959ac;
+        }
+
+        .btn.show {
+            opacity: 1;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* cursor blinking */
+        @keyframes cursor {
+            50% { border-color: transparent }
+        }
+
+        /* typing effect */
+        @keyframes typing {
+            from { width: 10% }
+            to { width: 80% }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p class="text">Ooops...... You have missed something</p>
+        <div class="btn-container">
+           <br> <button class="btn" onclick="window.location.href='/products'">Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                document.querySelector('.btn').classList.add('show');
+            }, 4000); // Adjust the delay (in milliseconds) based on your animation duration
+        });
+    </script>
+</body>
+</html>
+
